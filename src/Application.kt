@@ -57,7 +57,7 @@ fun Application.module(testing: Boolean = false) {
         put("/upload/{id}/md") {
             val id = call.parameters["id"]
 
-            // instanty unmarshall json to FileDetails object
+            // instantly unmarshal json to FileDetails object
             val details = call.receive<FileDetails>()
 
             val file = File("/storage/${id}/md.md")
@@ -68,6 +68,7 @@ fun Application.module(testing: Boolean = false) {
             call.respondText("Successfully added file '${details.name}'", contentType = ContentType.Text.Plain)
         }
 
+        // TODO remove after testing
         // show a specific file
         get("/files/{name}") {
             // extract param
@@ -84,51 +85,14 @@ fun Application.module(testing: Boolean = false) {
             call.respondText(text, contentType = ContentType.Text.Plain)
         }
 
-        get("/files/{id}/{name}") {
+        get("/pdf/{id}") {
             val id = call.parameters["id"]
-            val name = call.parameters["name"]
-
-            val file = File("/storage/${id}/${name}")
-            val text =
-                if (file.exists())
-                    file.readText()
-                else
-                    "File '${id}/${name}' does not exist"
+            val file = File("/storage/${id}/pdf.pdf")
 
             if (file.exists())
                 call.respondFile(file)
             else
-                call.respondText(text, contentType = ContentType.Text.Plain)
-        }
-
-        // show all files
-        get("/files") {
-            val allFiles = File("/storage/").list()!!
-            call.respondHtml {
-                body {
-                    h1 { +"All files: " }
-                    ul {
-                        for (file in allFiles) {
-                            li {
-                                // link to the route
-                                a(href = "/files/$file") {
-                                    +file
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        get("/fortune") {
-            // start system process
-            val proc = Runtime.getRuntime().exec("fortune")
-            // read output of prozesslesn
-            val stream = BufferedReader(InputStreamReader(proc.inputStream))
-
-            // return json data
-            call.respond(mapOf("fortuneJSON" to stream.readText()))
+                call.respondText("PDF does not exist.", contentType = ContentType.Text.Plain)
         }
 
     }

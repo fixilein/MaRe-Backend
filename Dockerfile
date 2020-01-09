@@ -5,7 +5,6 @@ FROM openjdk:8-jre-alpine
 WORKDIR /opt
 
 RUN apk update && \
-    apk add fortune && \
     apk add curl && \
     apk add texlive && \
 
