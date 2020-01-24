@@ -6,21 +6,25 @@ import io.ktor.application.install
 import io.ktor.features.CORS
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson
-import io.ktor.html.respondHtml
 import io.ktor.http.ContentType
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpMethod
-import io.ktor.request.receive
-import io.ktor.response.respond
+import io.ktor.http.content.PartData
+import io.ktor.http.content.forEachPart
+import io.ktor.http.content.streamProvider
+import io.ktor.request.receiveMultipart
 import io.ktor.response.respondFile
 import io.ktor.response.respondText
 import io.ktor.routing.get
-import io.ktor.routing.put
+import io.ktor.routing.post
 import io.ktor.routing.routing
-import kotlinx.html.*
-import java.io.BufferedReader
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.yield
 import java.io.File
-import java.io.InputStreamReader
+import java.io.InputStream
+import java.io.OutputStream
 import java.time.Instant
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
@@ -53,48 +57,85 @@ fun Application.module(testing: Boolean = false) {
             call.respondText(id, contentType = ContentType.Text.Plain)
         }
 
-        // add md file to storage
-        put("/upload/{id}/md") {
+        post("/upload/{id}/md") {
             val id = call.parameters["id"]
-
-            // instantly unmarshal json to FileDetails object
-            val details = call.receive<FileDetails>()
-
             val file = File("/storage/${id}/md.md")
-            file.writeText(details.content)
 
-            Runtime.getRuntime()
-                .exec("/opt/pandoc /storage/${id}/md.md -f markdown -t latex -o /storage/${id}/pdf.pdf")
-            call.respondText("Successfully added file '${details.name}'", contentType = ContentType.Text.Plain)
+            val multipart = call.receiveMultipart()
+            multipart.forEachPart { part ->
+                when (part) {
+                    is PartData.FileItem -> {
+                        part.streamProvider().use { input ->
+                            file.outputStream().buffered().use { output -> input.copyToSuspend(output) }
+                        }
+                    }
+                }
+                part.dispose()
+            }
         }
 
-        // TODO remove after testing
-        // show a specific file
-        get("/files/{name}") {
-            // extract param
-            val name = call.parameters["name"]
+        // TODO NOT TESTED!
+        post("/upload/{id}/img") {
+            val id = call.parameters["id"]
+            val dir = File("/storage/${id}/img/")
+            dir.mkdirs()
 
-            // read file (or error msg)
-            val file = File("/storage/$name")
-            val text =
-                if (file.exists())
-                    file.readText()
-                else
-                    "File '$name' does not exist"
-
-            call.respondText(text, contentType = ContentType.Text.Plain)
+            val multipart = call.receiveMultipart()
+            multipart.forEachPart { part ->
+                when (part) {
+                    is PartData.FileItem -> {
+                        part.streamProvider().use { input ->
+                            val file = File(dir, part.originalFileName)
+                            file.outputStream().buffered().use { output -> input.copyToSuspend(output) }
+                        }
+                    }
+                }
+                part.dispose()
+            }
         }
 
         get("/pdf/{id}") {
+            // TODO try generating PDF here, not in the upload (because images are not on the server then) 
             val id = call.parameters["id"]
             val file = File("/storage/${id}/pdf.pdf")
 
-            if (file.exists())
-                call.respondFile(file)
-            else
-                call.respondText("PDF does not exist.", contentType = ContentType.Text.Plain)
+            while (!file.exists()) { // TODO ugly workaround
+                generatePDF(id)
+                Thread.sleep(200)
+            }
+            call.respondFile(file)
+            // call.respondText("PDF does not exist.", contentType = ContentType.Text.Plain)
         }
 
+    }
+}
+
+private fun generatePDF(id: String?) {
+    Runtime.getRuntime()
+        .exec("/opt/pandoc /storage/${id}/md.md -f markdown -t latex -o /storage/${id}/pdf.pdf")
+}
+
+suspend fun InputStream.copyToSuspend(
+    out: OutputStream,
+    bufferSize: Int = DEFAULT_BUFFER_SIZE,
+    yieldSize: Int = 4 * 1024 * 1024,
+    dispatcher: CoroutineDispatcher = Dispatchers.IO
+): Long {
+    return withContext(dispatcher) {
+        val buffer = ByteArray(bufferSize)
+        var bytesCopied = 0L
+        var bytesAfterYield = 0L
+        while (true) {
+            val bytes = read(buffer).takeIf { it >= 0 } ?: break
+            out.write(buffer, 0, bytes)
+            if (bytesAfterYield >= yieldSize) {
+                yield()
+                bytesAfterYield %= yieldSize
+            }
+            bytesCopied += bytes
+            bytesAfterYield += bytes
+        }
+        return@withContext bytesCopied
     }
 }
 
