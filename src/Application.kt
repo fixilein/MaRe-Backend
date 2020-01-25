@@ -49,7 +49,6 @@ fun Application.module(testing: Boolean = false) {
     }
 
     routing {
-
         // get id for upload
         get("/upload/new") {
             val id = getId()
@@ -74,7 +73,6 @@ fun Application.module(testing: Boolean = false) {
             }
         }
 
-        // TODO NOT TESTED!
         post("/upload/{id}/img") {
             val id = call.parameters["id"]
             val dir = File("/storage/${id}/img/")
@@ -95,24 +93,23 @@ fun Application.module(testing: Boolean = false) {
         }
 
         get("/pdf/{id}") {
-            // TODO try generating PDF here, not in the upload (because images are not on the server then) 
             val id = call.parameters["id"]
+            generatePDF(id)
             val file = File("/storage/${id}/pdf.pdf")
 
-            while (!file.exists()) { // TODO ugly workaround
-                generatePDF(id)
-                Thread.sleep(200)
-            }
-            call.respondFile(file)
-            // call.respondText("PDF does not exist.", contentType = ContentType.Text.Plain)
+            if (file.exists())
+                call.respondFile(file)
+            else
+                call.respondText("PDF does not exist.", contentType = ContentType.Text.Plain)
         }
 
     }
 }
 
 private fun generatePDF(id: String?) {
-    Runtime.getRuntime()
-        .exec("/opt/pandoc /storage/${id}/md.md -f markdown -t latex -o /storage/${id}/pdf.pdf")
+    val p = Runtime.getRuntime()
+        .exec("/opt/pandoc /storage/${id}/md.md -f markdown -t latex -o /storage/${id}/pdf.pdf --resource-path /storage/${id}/img")
+    p.waitFor()
 }
 
 suspend fun InputStream.copyToSuspend(
