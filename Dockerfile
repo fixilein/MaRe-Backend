@@ -21,9 +21,7 @@ RUN apk update && \
 # copy server jar to image
 COPY ./build/libs/epic-server.jar /app/epic-server.jar
 
-# JVM params
-CMD ["java", "-server", "-XX:+UnlockExperimentalVMOptions", \
-    "-XX:+UseCGroupMemoryLimitForHeap", "-XX:InitialRAMFraction=2", "-XX:MinRAMFraction=2", \
-    "-XX:MaxRAMFraction=2", "-XX:+UseG1GC", "-XX:MaxGCPauseMillis=100", "-XX:+UseStringDeduplication", \
-# start the jar on container start
-    "-jar", "/app/epic-server.jar"]
+# Run start script
+COPY ./start.sh /start.sh
+RUN ["chmod", "+x", "/start.sh"]
+CMD  ["/bin/sh", "-c", "/start.sh"]

@@ -9,10 +9,12 @@ import io.ktor.gson.gson
 import io.ktor.http.ContentType
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpMethod
+import io.ktor.http.HttpStatusCode
 import io.ktor.http.content.PartData
 import io.ktor.http.content.forEachPart
 import io.ktor.http.content.streamProvider
 import io.ktor.request.receiveMultipart
+import io.ktor.response.respond
 import io.ktor.response.respondFile
 import io.ktor.response.respondText
 import io.ktor.routing.get
@@ -71,6 +73,7 @@ fun Application.module(testing: Boolean = false) {
                 }
                 part.dispose()
             }
+            call.respond(HttpStatusCode.Created)
         }
 
         post("/upload/{id}/img") {
@@ -90,6 +93,7 @@ fun Application.module(testing: Boolean = false) {
                 }
                 part.dispose()
             }
+            call.respond(HttpStatusCode.Created)
         }
 
         get("/pdf/{id}") {
@@ -100,16 +104,16 @@ fun Application.module(testing: Boolean = false) {
             if (file.exists())
                 call.respondFile(file)
             else
-                call.respondText("PDF does not exist.", contentType = ContentType.Text.Plain)
+                call.respond(HttpStatusCode.NotFound) // 404 Error
         }
 
     }
 }
 
 private fun generatePDF(id: String?) {
-    val p = Runtime.getRuntime()
+    Runtime.getRuntime()
         .exec("/opt/pandoc /storage/${id}/md.md -f markdown -t latex -o /storage/${id}/pdf.pdf --resource-path /storage/${id}/img")
-    p.waitFor()
+        .waitFor()
 }
 
 suspend fun InputStream.copyToSuspend(
