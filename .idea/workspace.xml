@@ -26,7 +26,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5e77b898-0f5e-402e-b975-b31f9ce82875" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -238,7 +237,7 @@
       <workItem from="1580471451539" duration="513000" />
       <workItem from="1580471983741" duration="19149000" />
       <workItem from="1580576077014" duration="12000" />
-      <workItem from="1580596017760" duration="2144000" />
+      <workItem from="1580596017760" duration="2498000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1578587876454</created>
@@ -289,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580572161688</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add docker compose file">
+      <created>1580598558249</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580598558249</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +309,8 @@
     <MESSAGE value="add start script &#10;cleanup old files" />
     <MESSAGE value="create log &#10;more fonts?" />
     <MESSAGE value="add workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="add workspace.xml" />
+    <MESSAGE value="add docker compose file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add docker compose file" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -347,11 +354,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="643" y="212" width="624" height="529" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579685099341" />
-    <state x="361" y="-3" width="957" height="932" key="CommitChangelistDialog2" timestamp="1580572161620">
+    <state x="361" y="-27" width="957" height="932" key="CommitChangelistDialog2" timestamp="1580598558033">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="437" y="4" width="792" height="972" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1578588709301" />
-    <state x="361" y="-3" key="CommitChangelistDialog2/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580572161620" />
+    <state x="361" y="-27" key="CommitChangelistDialog2/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580598558033" />
     <state x="361" y="1101" width="957" height="932" key="CommitChangelistDialog2/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580565152272" />
     <state x="733" y="348" width="307" height="210" key="DockerComposeFileDialog" timestamp="1580596059400">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -419,11 +426,11 @@
     </state>
     <state x="470" y="85" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1579685221682" />
     <state x="597" y="1256" width="1033" height="761" key="SettingsEditor/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1579789966767" />
-    <state x="555" y="67" width="800" height="530" key="Vcs.Push.Dialog.v2" timestamp="1580572163019">
+    <state x="555" y="43" width="800" height="530" key="Vcs.Push.Dialog.v2" timestamp="1580598559963">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="555" y="187" width="800" height="530" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1578588710397" />
-    <state x="555" y="67" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580572163019" />
+    <state x="555" y="43" width="800" height="530" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580598559963" />
     <state x="555" y="1171" width="800" height="530" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580565153863" />
     <state x="768" y="1394" width="501" height="517" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1578522220532">
       <screen x="0" y="1080" width="1920" height="1080" />
