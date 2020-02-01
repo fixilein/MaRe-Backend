@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BuildServerSettings">
+    <option name="LOGIN" value="" />
+    <option name="SERVER_URL" value="http://buildserver" />
+    <option name="REMEMBER_ME" value="true" />
+    <option name="USE_IDEA_PROXY_SETTINGS" value="true" />
+    <option name="INSPECTIONS_BUILD_TYPE_IDS" />
+    <option name="DUPLICATES_BUILD_TYPE_IDS" />
+    <option name="COVERAGE_SETTINGS" />
+    <option name="TEST_STATUS_ENABLED" value="true" />
+    <option name="TEST_STATUS_SHOW_SUCCESSFUL" value="false" />
+    <option name="POSTPONE_SUITABLE_CONFIGURATIONS_SEARCH" value="false" />
+    <option name="ARTIFACTS_BUILD_TYPE_IDS" />
+    <option name="PERFORM_COMMIT_IF_SUCCESSFUL" value="true" />
+    <option name="PERFORM_COMMIT_IF_NO_NEW_FAILED_TESTS" value="false" />
+    <option name="REQUEST_CONFIRMATON" value="false" />
+    <option name="PRE_TESTED_COMMIT" value="true" />
+    <option name="FILTER_BY_STATUS" value="false" />
+    <option name="FILTER_MARKED_AS_FIXED" value="false" />
+    <option name="SHOW_CLOSE_PROMPT" value="true" />
+    <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
+    <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
+    <option name="showStatusBarWidget" value="true" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e77b898-0f5e-402e-b975-b31f9ce82875" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="lMGgbNaS" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1W7uBPBRrPMuYwicyIQfqqTn9IM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="Docker.Run 2">
+    <configuration name="Build" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="shadowJar" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Run 2" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildCliOptions" value="" />
+          <option name="command" value="" />
+          <option name="containerName" value="matex-backend" />
+          <option name="entrypoint" value="" />
+          <option name="imageTag" value="mare-backend" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="-m512M --rm -it -v $PROJECT_DIR$/storage:/storage" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="Build" run_configuration_type="GradleRunConfiguration" />
+      </method>
+    </configuration>
+    <configuration name="Run" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildCliOptions" value="" />
+          <option name="command" value="" />
+          <option name="containerName" value="mare-backend" />
+          <option name="entrypoint" value="" />
+          <option name="imageTag" value="mare-backend" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="-m512M --rm -it" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="Build" run_configuration_type="GradleRunConfiguration" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Docker.Run 2" />
+      <item itemvalue="Docker.Run" />
+      <item itemvalue="Gradle.Build" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Run" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/Github/asso-webserver" value="PREVIEW" />
+        <entry key="$USER_HOME$/Github/learn-scala" value="PREVIEW" />
+        <entry key="$USER_HOME$/Github/play-test" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.17859094" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="Containers" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e77b898-0f5e-402e-b975-b31f9ce82875" name="Default Changelist" comment="" />
+      <created>1578512817843</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578512817843</updated>
+      <workItem from="1578512822957" duration="2955000" />
+      <workItem from="1578517221444" duration="4018000" />
+      <workItem from="1578521589658" duration="2409000" />
+      <workItem from="1578558953556" duration="748000" />
+      <workItem from="1578559819158" duration="1699000" />
+      <workItem from="1578583336078" duration="5528000" />
+      <workItem from="1578820652531" duration="146000" />
+      <workItem from="1578837619494" duration="61000" />
+      <workItem from="1578840048630" duration="110000" />
+      <workItem from="1578861783316" duration="1303000" />
+      <workItem from="1578906139853" duration="58000" />
+      <workItem from="1578913004438" duration="13000" />
+      <workItem from="1578913236633" duration="21000" />
+      <workItem from="1578915738681" duration="207000" />
+      <workItem from="1579346537588" duration="54000" />
+      <workItem from="1579346629522" duration="92000" />
+      <workItem from="1579684942617" duration="170000" />
+      <workItem from="1579685124938" duration="98000" />
+      <workItem from="1579789500624" duration="6461000" />
+      <workItem from="1579818064722" duration="51000" />
+      <workItem from="1579881498816" duration="36723000" />
+      <workItem from="1580290267154" duration="7576000" />
+      <workItem from="1580464126880" duration="2552000" />
+      <workItem from="1580466707264" duration="449000" />
+      <workItem from="1580467171984" duration="3314000" />
+      <workItem from="1580471451539" duration="513000" />
+      <workItem from="1580471983741" duration="18359000" />
+    </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <created>1578587876454</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578587876454</updated>
+    </task>
+    <task id="LOCAL-00002" summary="essentially finished server">
+      <created>1578588709517</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578588709517</updated>
+    </task>
+    <task id="LOCAL-00003" summary="big time back-end improvements.">
+      <created>1579889011859</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579889011859</updated>
+    </task>
+    <task id="LOCAL-00004" summary="pdf generating works fine.&#10;images upload works as well.">
+      <created>1579942065199</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579942065199</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add start script &#10;cleanup old files">
+      <created>1580473163634</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1580473163634</updated>
+    </task>
+    <task id="LOCAL-00006" summary="create log &#10;more fonts?">
+      <created>1580565152741</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1580565152741</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <MESSAGE value="essentially finished server" />
+    <MESSAGE value="big time back-end improvements." />
+    <MESSAGE value="pdf generating works fine.&#10;images upload works as well." />
+    <MESSAGE value="add start script &#10;cleanup old files" />
+    <MESSAGE value="create log &#10;more fonts?" />
+    <option name="LAST_COMMIT_MESSAGE" value="create log &#10;more fonts?" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="601" y="1209" width="800" height="671" key="#Docker" timestamp="1578522148074">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="601" y="1209" width="800" height="671" key="#Docker/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1578522148074" />
+    <state x="2901" y="499" width="588" height="895" key="#Dockerfile" timestamp="1578517328862">
+      <screen x="1920" y="240" width="2560" height="1440" />
+    </state>
+    <state x="2901" y="499" width="588" height="895" key="#Dockerfile/1920.240.2560.1440/0.420.1920.1080/4480.0.1080.1920@1920.240.2560.1440" timestamp="1578517328862" />
+    <state x="555" y="1221" width="800" height="671" key="#Plugins" timestamp="1579903695100">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="555" y="1221" width="800" height="671" key="#Plugins/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1579903695100" />
+    <state x="472" y="1221" width="800" height="671" key="#Project_Structure" timestamp="1578861846073">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="555" y="141" width="800" height="671" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1578583862553" />
+    <state x="472" y="1221" key="#Project_Structure/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1578861846073" />
+    <state x="1059" y="1116" width="737" height="784" key="#Run_2" timestamp="1580471809732">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="1059" y="1116" width="737" height="784" key="#Run_2/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580471809732" />
+    <state x="550" y="114" width="800" height="671" key="#Updates" timestamp="1579685097597">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="550" y="114" width="800" height="671" key="#Updates/0.0.1920.1080@0.0.1920.1080" timestamp="1579685097597" />
+    <state x="372" y="1083" width="1134" height="916" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580571484055">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="152" y="29" width="1185" height="835" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578586812030" />
+    <state x="372" y="1083" width="1134" height="916" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580571484055" />
+    <state x="2664" y="602" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.240.2560.1440/0.420.1920.1080/4480.0.1080.1920@1920.240.2560.1440" timestamp="1578518663497" />
+    <state x="320" y="1353" width="805" height="407" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580568135159">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="320" y="1353" width="805" height="407" key="#com.intellij.fileTypes.FileTypeChooser/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580568135159" />
+    <state x="643" y="212" width="624" height="529" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579685099341">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="643" y="212" width="624" height="529" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579685099341" />
+    <state x="361" y="1101" width="957" height="932" key="CommitChangelistDialog2" timestamp="1580565152272">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="437" y="4" width="792" height="972" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1578588709301" />
+    <state x="361" y="1101" width="957" height="932" key="CommitChangelistDialog2/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580565152272" />
+    <state x="689" y="1266" width="424" height="478" key="FileChooserDialogImpl" timestamp="1578523222717">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="689" y="1266" width="424" height="478" key="FileChooserDialogImpl/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1578523222717" />
+    <state width="1920" height="263" key="GridCell.Tab.0.bottom" timestamp="1580571754082">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="367" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578588864751" />
+    <state width="1920" height="263" key="GridCell.Tab.0.bottom/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580571754082" />
+    <state width="1920" height="263" key="GridCell.Tab.0.bottom/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580571510791" />
+    <state width="2100" height="395" key="GridCell.Tab.0.bottom/1920.240.2560.1440/0.420.1920.1080/4480.0.1080.1920@1920.240.2560.1440" timestamp="1578521240182" />
+    <state width="1920" height="263" key="GridCell.Tab.0.center" timestamp="1580571754082">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="367" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578588864750" />
+    <state width="1920" height="263" key="GridCell.Tab.0.center/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580571754082" />
+    <state width="1920" height="263" key="GridCell.Tab.0.center/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580571510791" />
+    <state width="2100" height="395" key="GridCell.Tab.0.center/1920.240.2560.1440/0.420.1920.1080/4480.0.1080.1920@1920.240.2560.1440" timestamp="1578521240182" />
+    <state width="1920" height="263" key="GridCell.Tab.0.left" timestamp="1580571754082">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="367" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578588864750" />
+    <state width="1920" height="263" key="GridCell.Tab.0.left/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580571754082" />
+    <state width="1920" height="263" key="GridCell.Tab.0.left/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580571510791" />
+    <state width="2100" height="395" key="GridCell.Tab.0.left/1920.240.2560.1440/0.420.1920.1080/4480.0.1080.1920@1920.240.2560.1440" timestamp="1578521240182" />
+    <state width="1920" height="263" key="GridCell.Tab.0.right" timestamp="1580571754082">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="367" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578588864751" />
+    <state width="1920" height="263" key="GridCell.Tab.0.right/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580571754082" />
+    <state width="1920" height="263" key="GridCell.Tab.0.right/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580571510791" />
+    <state width="2100" height="395" key="GridCell.Tab.0.right/1920.240.2560.1440/0.420.1920.1080/4480.0.1080.1920@1920.240.2560.1440" timestamp="1578521240182" />
+    <state width="1299" height="308" key="GridCell.Tab.1.bottom" timestamp="1580168120198">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1299" height="308" key="GridCell.Tab.1.bottom/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580168120198" />
+    <state width="1299" height="308" key="GridCell.Tab.1.bottom/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1579971337620" />
+    <state width="1299" height="308" key="GridCell.Tab.1.center" timestamp="1580168120197">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1299" height="308" key="GridCell.Tab.1.center/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580168120197" />
+    <state width="1299" height="308" key="GridCell.Tab.1.center/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1579971337620" />
+    <state width="1299" height="308" key="GridCell.Tab.1.left" timestamp="1580168120197">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1299" height="308" key="GridCell.Tab.1.left/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580168120197" />
+    <state width="1299" height="308" key="GridCell.Tab.1.left/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1579971337620" />
+    <state width="1299" height="308" key="GridCell.Tab.1.right" timestamp="1580168120198">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1299" height="308" key="GridCell.Tab.1.right/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580168120198" />
+    <state width="1299" height="308" key="GridCell.Tab.1.right/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1579971337620" />
+    <state x="2750" y="784" key="NewModule_or_Project.wizard" timestamp="1578512834050">
+      <screen x="1920" y="240" width="2560" height="1440" />
+    </state>
+    <state x="2750" y="784" key="NewModule_or_Project.wizard/1920.240.2560.1440/0.420.1920.1080/4480.0.1080.1920@1920.240.2560.1440" timestamp="1578512834050" />
+    <state x="597" y="1256" width="1033" height="761" key="SettingsEditor" timestamp="1579789966767">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="470" y="85" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1579685221682" />
+    <state x="597" y="1256" width="1033" height="761" key="SettingsEditor/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1579789966767" />
+    <state x="555" y="1171" width="800" height="530" key="Vcs.Push.Dialog.v2" timestamp="1580565153863">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="555" y="187" width="800" height="530" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1578588710397" />
+    <state x="555" y="1171" width="800" height="530" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580565153863" />
+    <state x="768" y="1394" width="501" height="517" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1578522220532">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="768" y="1394" width="501" height="517" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1578522220532" />
+    <state x="2944" y="690" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/1920.240.2560.1440/0.420.1920.1080/4480.0.1080.1920@1920.240.2560.1440" timestamp="1578517271788" />
+    <state x="136" y="1474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578862485387">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="136" y="1474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1578862485387" />
+    <state width="495" height="159" key="javadoc.popup.new" timestamp="1579974759488">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="495" height="159" key="javadoc.popup.new/0.0.1920.1080@0.0.1920.1080" timestamp="1578583628600" />
+    <state width="495" height="159" key="javadoc.popup.new/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1579974759488" />
+    <state width="660" height="211" key="javadoc.popup.new/1920.240.2560.1440/0.420.1920.1080/4480.0.1080.1920@1920.240.2560.1440" timestamp="1578520316381" />
+    <state x="396" y="1175" width="1006" height="840" key="new project wizard" timestamp="1578840157173">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="396" y="1175" width="1006" height="840" key="new project wizard/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1578840157173" />
+    <state x="624" y="770" key="run.anything.popup" timestamp="1580471581458">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="624" y="770" key="run.anything.popup/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580471581458" />
+    <state x="390" y="1303" width="672" height="678" key="search.everywhere.popup" timestamp="1580571344153">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="390" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578587789979" />
+    <state x="390" y="1303" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/0.0.1920.1080@0.1080.1920.1080" timestamp="1580571344153" />
+  </component>
+</project>
