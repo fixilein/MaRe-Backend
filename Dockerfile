@@ -6,7 +6,9 @@ WORKDIR /opt
 
 RUN apk update && \
     apk add curl && \
-    apk add texlive && \
+    # apk add texlive && \
+    apk add texlive-full && \
+    # apk add texlive-xetex && \
 
     # install pandoc
     curl -L "https://github.com/jgm/pandoc/releases/download/2.9.1.1/pandoc-2.9.1.1-linux-amd64.tar.gz" -o pandoc.tar.gz && \
@@ -23,5 +25,7 @@ COPY ./build/libs/epic-server.jar /app/epic-server.jar
 
 # Run start script
 COPY ./start.sh /start.sh
+COPY ./make.sh /make.sh
 RUN ["chmod", "+x", "/start.sh"]
+RUN ["chmod", "+x", "/make.sh"]
 CMD  ["/bin/sh", "-c", "/start.sh"]

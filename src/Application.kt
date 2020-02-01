@@ -107,13 +107,23 @@ fun Application.module(testing: Boolean = false) {
                 call.respond(HttpStatusCode.NotFound) // 404 Error
         }
 
+        get("/log/{id}") {
+            val id = call.parameters["id"]
+            val log = File("/storage/${id}/log")
+            call.respondText(log.readText(), contentType = ContentType.Text.Plain)
+        }
+
     }
 }
 
 private fun generatePDF(id: String?) {
-    Runtime.getRuntime()
-        .exec("/opt/pandoc /storage/${id}/md.md -f markdown -t latex -o /storage/${id}/pdf.pdf --resource-path /storage/${id}/img")
-        .waitFor()
+    val exec = Runtime.getRuntime()
+        .exec("/make.sh $id")
+    exec.waitFor()
+}
+
+fun InputStream.toFile(path: String) {
+    File(path).outputStream().use { this.copyTo(it) }
 }
 
 suspend fun InputStream.copyToSuspend(
