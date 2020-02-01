@@ -6,9 +6,7 @@ WORKDIR /opt
 
 RUN apk update && \
     apk add curl && \
-    # apk add texlive && \
     apk add texlive-full && \
-    # apk add texlive-xetex && \
 
     # install pandoc
     curl -L "https://github.com/jgm/pandoc/releases/download/2.9.1.1/pandoc-2.9.1.1-linux-amd64.tar.gz" -o pandoc.tar.gz && \
