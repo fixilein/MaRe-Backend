@@ -58,6 +58,10 @@ fun Application.module(testing: Boolean = false) {
             call.respondText(id, contentType = ContentType.Text.Plain)
         }
 
+        get("/status") {
+            call.respondText("Up: Version 1.2, pandoc version 2.11.2-linux-amd64", contentType = ContentType.Text.Plain)
+        }
+
         post("/upload/{id}/md") {
             val id = call.parameters["id"]
             val file = File("/storage/${id}/md.md")
