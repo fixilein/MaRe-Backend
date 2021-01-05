@@ -12,7 +12,7 @@ dockerfile cant retrieve image id from build stream
 
 ```
 docker commit <container-id> felicious/matex-backend
-
+e.g.
 docker commit matex-backend-local felicious/matex-backend
 
 docker push felicious/matex-backend
@@ -20,4 +20,4 @@ docker push felicious/matex-backend
 
 ## updating on sever
 
-docker pull felicious/matex-backend docker-compose restart
+docker pull felicious/matex-backend docker-compose stop docker-compose up -d

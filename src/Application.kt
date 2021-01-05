@@ -59,7 +59,7 @@ fun Application.module(testing: Boolean = false) {
         }
 
         get("/status") {
-            call.respondText("Up: Version 1.2, pandoc version 2.11.2-linux-amd64", contentType = ContentType.Text.Plain)
+            call.respondText("Up: Version 1.3, pandoc version 2.11.2-linux-amd64", contentType = ContentType.Text.Plain)
         }
 
         post("/upload/{id}/md") {
