@@ -24,6 +24,7 @@ RUN apk add font-noto-devanagari
 RUN apk add font-noto-myanmar
 RUN apk add font-noto-arabic
 RUN apk add font-noto-hebrew
+RUN apk add font-noto-bengali
 
 RUN mkdir /storage
 
